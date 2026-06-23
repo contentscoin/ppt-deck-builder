@@ -4,6 +4,19 @@ End-to-end Codex skill for producing PowerPoint decks from source materials.
 
 This is a PPT production skill, not an OpenCrab wrapper. OpenCrab context can support decisions when available, but the skill works from its bundled production workflow, source-to-deck rules, asset/chart rules, and QA scripts.
 
+## Optional OpenCrab Context
+
+When OpenCrab tools are available, use this public integrated support pack:
+
+- Project: `ppt-public-integrated-pack`
+- Project ID: `6c267924-fe1c-4d69-a082-9c9cf0ce09a3`
+- Package: `PPT Public Integrated Ontology Pack`
+- Package ID: `a48c6f4f-6432-4d0e-ad3a-f9386e2dc917`
+- Version: `1.9.0`
+- Snapshot: 10 documents, 80 chunks, 130 nodes, 120 edges
+
+The pack includes reference inventories, S-tier deck analysis, source-to-deck workflow, mixed image/text handling, frame modes, chart rebuild rules, slide roles, design tokens, QA gates, and failure modes. It is support context only; final PPT quality still depends on source extraction, artifact generation, PPTX build, render/contact-sheet QA, and validation.
+
 ## What It Does
 
 - Converts PDFs, reports, spreadsheets, websites, notes, images, screenshots, or old PPTX files into slide decks.
@@ -18,9 +31,18 @@ This is a PPT production skill, not an OpenCrab wrapper. OpenCrab context can su
 ```bash
 mkdir -p ~/.codex/skills
 git clone https://github.com/contentscoin/ppt-deck-builder.git ~/.codex/skills/ppt-deck-builder
+python3 -m pip install -r ~/.codex/skills/ppt-deck-builder/requirements.txt
 ```
 
 Restart Codex after installing.
+
+For render QA, install native render tools as well:
+
+```bash
+brew install poppler libreoffice
+```
+
+In Codex Desktop, the bundled workspace Python may already include `python-pptx`, `pdf2image`, `unstructured`, pandas, and openpyxl. If default `python3` is missing optional modules, run scripts with the bundled Python path provided by the workspace dependency loader.
 
 ## Use
 
