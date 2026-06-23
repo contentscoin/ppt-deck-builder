@@ -65,10 +65,18 @@ Check local toolchain:
 python3 scripts/check_toolchain.py
 ```
 
+Validate production artifacts:
+
+```bash
+python3 scripts/validate_deck_job.py OUTPUT_DIR --phase draft
+python3 scripts/validate_deck_job.py OUTPUT_DIR --phase final
+```
+
 ## Completion Rule
 
 Do not claim a final deck is complete unless:
 
+- `validate_deck_job.py --phase final` passes, or every failure is explicitly reported
 - PPTX path exists
 - exported PDF or rendered slide images exist
 - contact sheet exists

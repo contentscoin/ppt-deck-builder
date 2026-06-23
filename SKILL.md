@@ -23,6 +23,7 @@ Treat PPT production as a design-and-evidence workflow, not summarization. Build
 ```bash
 python3 scripts/init_deck_job.py --out-dir OUTPUT_DIR --title "Deck title" --audience "Audience" --target-slides 12
 python3 scripts/check_toolchain.py
+python3 scripts/validate_deck_job.py OUTPUT_DIR --phase draft
 ```
 
 3. Read the relevant references:
@@ -42,8 +43,9 @@ python3 scripts/check_toolchain.py
 6. Design tokens: create `design_tokens.json` with canvas, typography, color, margins, chart style, image frame rules, footer/source note behavior.
 7. Asset plan: for mixed image/text sources, create `asset_manifest.json`, `image_decision_log.json`, `composition_plan.json`, and `frame_spec.json`.
 8. Chart plan: for charts/tables, create `chart_rebuild_spec.json`; rebuild as native PPT objects when data or readable chart logic exists.
-9. PPTX build: create or edit the PPTX. Use `scripts/outline_to_pptx.py` as a scaffold when useful, then refine manually or with `python-pptx`.
-10. Render QA: render PPTX to PDF/images, create `contact_sheet.jpg`, inspect it, repair failures, and update `qa_report.md`.
+9. Validation gate: run `python3 scripts/validate_deck_job.py OUTPUT_DIR --phase draft` before build, then fix artifact errors.
+10. PPTX build: create or edit the PPTX. Use `scripts/outline_to_pptx.py` as a scaffold when useful, then refine manually or with `python-pptx`.
+11. Render QA: render PPTX to PDF/images, create `contact_sheet.jpg`, inspect it, repair failures, update `qa_report.md`, and run final validation.
 
 ## Required Artifacts
 
@@ -82,6 +84,7 @@ If the user only asks for a plan, do not fabricate completed artifacts. State wh
 - Do not crop out faces, products, logos, UI controls, chart axes, legends, labels, footnotes, or source notes.
 - Do not claim exact font sizes, object coordinates, grid geometry, or master layout values from screenshots alone.
 - Do not mark a final PPTX complete without rendered visual QA unless the user explicitly requested only a draft/outline.
+- Do not skip `validate_deck_job.py --phase final` before delivery unless the user explicitly asked for a conceptual plan only.
 
 ## Build Guidance
 
@@ -104,6 +107,22 @@ Preserve image files for:
 - complex scientific plots, heatmaps, maps, and research figures when rebuilding would alter meaning
 
 Use generated or replacement images only after recording the reason in `image_decision_log.json`.
+
+## Validation Gate
+
+Before claiming a deck is ready, run:
+
+```bash
+python3 scripts/validate_deck_job.py OUTPUT_DIR --phase final
+```
+
+For work in progress, run:
+
+```bash
+python3 scripts/validate_deck_job.py OUTPUT_DIR --phase draft
+```
+
+For mixed image/text sources, add `--require-mixed` after the source has been classified as mixed. If validation fails, repair the artifacts or report the blocking errors clearly.
 
 ## Final Response Contract
 
