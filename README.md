@@ -12,10 +12,10 @@ When OpenCrab tools are available, use this public integrated support pack:
 - Project ID: `6c267924-fe1c-4d69-a082-9c9cf0ce09a3`
 - Package: `PPT Public Integrated Ontology Pack`
 - Package ID: `a48c6f4f-6432-4d0e-ad3a-f9386e2dc917`
-- Version: `1.9.0`
-- Snapshot: 10 documents, 80 chunks, 130 nodes, 120 edges
+- Version: `2.5.0`
+- Snapshot: 16 documents, 128 chunks, 208 nodes, 192 edges
 
-The pack includes reference inventories, S-tier deck analysis, source-to-deck workflow, mixed image/text handling, frame modes, chart rebuild rules, slide roles, design tokens, QA gates, and failure modes. It is support context only; final PPT quality still depends on source extraction, artifact generation, PPTX build, render/contact-sheet QA, and validation.
+The pack includes reference inventories, S-tier deck analysis, source-to-deck workflow, mixed image/text handling, frame modes, chart rebuild rules, slide roles, design tokens, QA gates, failure modes, reference pattern routing, production artifact schemas, case playbooks, analyzer evidence boundaries, quality rubrics, and retrieval prompt recipes. It is support context only; final PPT quality still depends on source extraction, artifact generation, PPTX build, render/contact-sheet QA, and validation.
 
 ## What It Does
 

@@ -9,6 +9,9 @@ Use OpenCrab only to strengthen decisions when available:
 - mixed image/text asset handling
 - chart/table evidence correction
 - screenshot-only evidence limits
+- production artifact schema lookup
+- case routing playbooks
+- quality rubric and repair action lookup
 - final QA guardrails
 
 ## Known Project
@@ -19,9 +22,9 @@ Primary public integrated context:
 - Project ID: `6c267924-fe1c-4d69-a082-9c9cf0ce09a3`
 - Package: `PPT Public Integrated Ontology Pack`
 - Package ID: `a48c6f4f-6432-4d0e-ad3a-f9386e2dc917`
-- Version: `1.9.0`
+- Version: `2.5.0`
 - Visibility: `draft` pack inside a `public` OpenCrab project
-- Snapshot: 10 documents, 80 chunks, 130 nodes, 120 edges
+- Snapshot: 16 documents, 128 chunks, 208 nodes, 192 edges
 - QA: A / 100, release-ready true
 
 Legacy/private development context:
@@ -45,6 +48,12 @@ The public integrated pack contains these context layers:
 8. typography, layout metrics, color surfaces, and design tokens
 9. asset types, frame modes, and chart/table rules
 10. QA gates, failure modes, validation artifacts, and delivery workflow
+11. reference pattern matrix and reference route selection
+12. production artifact schemas, required fields, dependencies, and output contracts
+13. case routing playbooks for common PPT production scenarios
+14. analyzer evidence model, measurement confidence, and screenshot/PPTX boundaries
+15. quality rubric, severity model, acceptance profiles, and repair actions
+16. retrieval prompts, agent recipes, answer shapes, and OpenCrab support-only rules
 
 The legacy workflow contains these nodes:
 
