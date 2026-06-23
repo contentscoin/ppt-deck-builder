@@ -1,0 +1,4 @@
+interface:
+  display_name: "PPT Deck Builder"
+  short_description: "자료 분석부터 실제 PPT 제작까지 돕는 스킬"
+  default_prompt: "Use $ppt-deck-builder to turn this source material into a polished PowerPoint deck."
