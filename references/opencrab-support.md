@@ -12,6 +12,7 @@ Use OpenCrab only to strengthen decisions when available:
 - production artifact schema lookup
 - case routing playbooks
 - quality rubric and repair action lookup
+- high-quality reference route selection from real public decks and PDF presentations
 - final QA guardrails
 
 ## Known Project
@@ -22,10 +23,10 @@ Primary public integrated context:
 - Project ID: `6c267924-fe1c-4d69-a082-9c9cf0ce09a3`
 - Package: `PPT Public Integrated Ontology Pack`
 - Package ID: `a48c6f4f-6432-4d0e-ad3a-f9386e2dc917`
-- Version: `2.5.0`
+- Version: `2.6.1`
 - Visibility: `draft` pack inside a `public` OpenCrab project
-- Snapshot: 16 documents, 128 chunks, 208 nodes, 192 edges
-- QA: A / 100, release-ready true
+- Snapshot: 18 documents, 142 chunks, 234 nodes, 216 edges
+- QA: A / 90, release-ready true
 
 Legacy/private development context:
 
@@ -54,6 +55,8 @@ The public integrated pack contains these context layers:
 14. analyzer evidence model, measurement confidence, and screenshot/PPTX boundaries
 15. quality rubric, severity model, acceptance profiles, and repair actions
 16. retrieval prompts, agent recipes, answer shapes, and OpenCrab support-only rules
+17. high-quality reference corpus upgrade from `insane-search` crawl
+18. compact route index for real-deck/PDF reference retrieval
 
 The legacy workflow contains these nodes:
 
